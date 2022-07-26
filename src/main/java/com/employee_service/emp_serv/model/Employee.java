@@ -1,38 +1,34 @@
 package com.employee_service.emp_serv.model;
-
-
 import javax.persistence.*;
 
 @Entity
-@Table(name = "emp_table")
-
+@Table(name="emp")
 public class Employee {
-
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private long id;
-
-    @Column(name = "fistname")
-    private String fistname;
-    @Column(name = "lastname")
+    private Long id;
+    //Checking columns of database
+    @Column(name="first_name")
+    private String firstname;
+    @Column(name="last_name")
     private String lastname;
-    @Column(name = "email")
+    @Column(name="email")
     private String email;
 
-    public long getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(long id) {
+    public void setId(Long id) {
         this.id = id;
     }
 
-    public String getFistname() {
-        return fistname;
+    public String getFirstname() {
+        return firstname;
     }
 
-    public void setFistname(String fistname) {
-        this.fistname = fistname;
+    public void setFirstname(String firstname) {
+        this.firstname = firstname;
     }
 
     public String getLastname() {

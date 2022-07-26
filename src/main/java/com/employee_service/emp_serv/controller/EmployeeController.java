@@ -4,18 +4,21 @@ import com.employee_service.emp_serv.model.Employee;
 import com.employee_service.emp_serv.service.EmployeeService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
+import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
+@Controller
 public class EmployeeController {
     @Autowired
     private EmployeeService employeeService;
 
+    //sortField--> same as class attribute
     @GetMapping("/")
     public String viewHomePage(Model model) {
-        return findPaginated(1, "firstName", "asc", model);
+        return findPaginated(1, "firstname", "asc", model);
     }
 
     @GetMapping("/showNewEmployeeForm")
